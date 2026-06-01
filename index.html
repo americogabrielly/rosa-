@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Salão Rosa | Beleza & Estilo</title>
+    <!-- Google Fonts + Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fffafc;
+            color: #3d2b2f;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        /* variáveis rosa luxo */
+        :root {
+            --rose-blush: #ffe4e9;
+            --rose-petal: #ffb7c5;
+            --rose-dusty: #d96c7c;
+            --rose-deep: #b5485a;
+            --rose-shadow: rgba(217, 108, 124, 0.15);
+            --golden: #e9c6af;
+            --white-soft: #fffef7;
+        }
+
+        /* container padrão */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* header e navegação */
+        header {
+            background: rgba(255, 250, 245, 0.96);
+            backdrop-filter: blur(2px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #ffe1e7;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+            flex-wrap: wrap;
+        }
+
+        .logo h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            background: linear-gradient(135deg, #b84c5f, #e27b8f);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: -0.3px;
+        }
+
+        .logo p {
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            color: #d96c7c;
+            font-weight: 500;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #5f3e44;
+            transition: 0.3s;
+            font-size: 1rem;
+        }
+
+        .nav-links a:hover {
+            color: #c75b6e;
+            transform: translateY(-2px);
+        }
+
+        /* botões */
+        .btn-primary {
+            display: inline-block;
+            background: linear-gradient(100deg, #e27b8f, #c75b6e);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 8px 18px var(--rose-shadow);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.02);
+            background: linear-gradient(100deg, #d46b7f, #b8475a);
+            box-shadow: 0 12px 22px rgba(219, 108, 124, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #e27b8f;
+            color: #b5485a;
+            padding: 8px 22px;
+            border-radius: 40px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .btn-outline:hover {
+            background: #ffe2e8;
+            border-color: #c75b6e;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 70px 0 90px;
+            background: linear-gradient(145deg, #fff3f5 0%, #ffe8ed 100%);
+            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+        }
+
+        .hero-grid {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .hero-content .badge {
+            background: #ffdce3;
+            display: inline-block;
+            padding: 6px 18px;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #b5485a;
+            margin-bottom: 20px;
+        }
+
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.2rem;
+            line-height: 1.2;
+            color: #3a282e;
+            margin-bottom: 20px;
+        }
+
+        .hero-content h1 span {
+            color: #d06274;
+            font-style: italic;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: #614c52;
+            margin-bottom: 30px;
+            max-width: 90%;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 30px;
+            margin-top: 35px;
+        }
+
+        .stat-item {
+            text-align: left;
+        }
+
+        .stat-number {
+            font-size: 1.9rem;
+            font-weight: 800;
+            color: #bc5e6f;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 50% 50% 40% 60% / 70% 40% 60% 30%;
+            box-shadow: 30px 30px 40px rgba(190, 90, 110, 0.12);
+            object-fit: cover;
+            transition: all 0.4s;
+        }
+
+        /* seção comum */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.3rem;
+            color: #482e35;
+            margin-bottom: 16px;
+        }
+
+        .section-sub {
+            text-align: center;
+            color: #a06d7a;
+            margin-bottom: 50px;
+            font-weight: 400;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* serviços cards */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 35px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 32px;
+            padding: 28px 20px 32px;
+            text-align: center;
+            transition: 0.25s ease;
+            box-shadow: 0 12px 28px var(--rose-shadow);
+            border: 1px solid #ffe3e9;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 24px 40px rgba(181, 72, 90, 0.15);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: #dc7b8c;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .service-card p {
+            color: #6e4e56;
+            margin-bottom: 20px;
+        }
+
+        .price {
+            font-weight: 700;
+            color: #b5485a;
+            font-size: 1.25rem;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        /* sobre / espaço */
+        .about-grid {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+            background: #fff5f7;
+            border-radius: 60px;
+            padding: 30px 40px;
+        }
+
+        .about-img {
+            flex: 1;
+            border-radius: 40px;
+            overflow: hidden;
+            box-shadow: 0 20px 30px rgba(0,0,0,0.05);
+        }
+
+        .about-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s;
+        }
+
+        .about-img:hover img {
+            transform: scale(1.02);
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #3e2a2f;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: #5f434b;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin: 25px 0;
+        }
+
+        .feature-list li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .feature-list i {
+            color: #e27b8f;
+            font-size: 1.2rem;
+        }
+
+        /* galeria */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .gallery-item {
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+            background: #fff0f2;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-caption {
+            padding: 15px;
+            text-align: center;
+            font-weight: 500;
+            background: white;
+            color: #b8586b;
+        }
+
+        /* depoimentos */
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: white;
+            border-radius: 36px;
+            padding: 30px 24px;
+            box-shadow: 0 18px 30px rgba(181, 72, 90, 0.07);
+            border: 1px solid #ffe0e6;
+            transition: 0.2s;
+        }
+
+        .stars {
+            color: #f5b042;
+            margin-bottom: 18px;
+            letter-spacing: 2px;
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: #452e35;
+        }
+
+        .client {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .client img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .client-info h4 {
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        /* rodapé */
+        footer {
+            background: #331f24;
+            color: #f9e6eb;
+            padding: 50px 0 25px;
+            border-top-left-radius: 50px;
+            border-top-right-radius: 50px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            color: #ffcdd6;
+        }
+
+        .footer-col p, .footer-col ul {
+            font-size: 0.9rem;
+            opacity: 0.85;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col a {
+            color: #ffc8d3;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .footer-col a:hover {
+            color: white;
+            padding-left: 4px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 18px;
+            margin-top: 18px;
+        }
+
+        .social-icons a {
+            background: rgba(255, 255, 255, 0.12);
+            width: 36px;
+            height: 36px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            transition: 0.2s;
+        }
+
+        .social-icons a:hover {
+            background: #dd7e92;
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #5d3e46;
+            font-size: 0.8rem;
+        }
+
+        /* responsivo */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .nav-links {
+                gap: 1.2rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .hero-content h1 {
+                font-size: 2.3rem;
+            }
+            .hero-content p {
+                max-width: 100%;
+            }
+            .hero-stats {
+                justify-content: center;
+            }
+            .about-grid {
+                padding: 20px;
+            }
+            .section-title {
+                font-size: 1.9rem;
+            }
+            .hero-grid {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+            .hero-stats {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container navbar">
+        <div class="logo">
+            <h1>Salão Rosa</h1>
+            <p>beleza com alma</p>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Início</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#sobre">Espaço</a></li>
+            <li><a href="#galeria">Galeria</a></li>
+            <li><a href="#depoimentos">Opiniões</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+        <a href="#" class="btn-primary"><i class="fas fa-calendar-alt"></i> Agende já</a>
+    </div>
+</header>
+
+<main>
+    <!-- Hero section -->
+    <section id="home" class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <div class="badge"><i class="fas fa-spa"></i> Exclusividade rosa</div>
+                <h1>Onde seu brilho <br> <span>ganha cor</span> e leveza</h1>
+                <p>Um refúgio de beleza com tratamentos premium, equipe acolhedora e um toque romântico que transforma cada visita em um momento único.</p>
+                <a href="#" class="btn-primary"><i class="fas fa-hand-sparkles"></i> Descubra seus momentos</a>
+                <div class="hero-stats">
+                    <div class="stat-item"><div class="stat-number">+7 anos</div><div>de experiência</div></div>
+                    <div class="stat-item"><div class="stat-number">10k</div><div>clientes felizes</div></div>
+                    <div class="stat-item"><div class="stat-number">⭐ 4.9</div><div>avaliações</div></div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=500&h=600&fit=crop" alt="Modelo com cabelos rosados e elegantes">
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços -->
+    <section id="servicos">
+        <div class="container">
+            <h2 class="section-title">Assinaturas de beleza</h2>
+            <div class="section-sub">Viva o prazer de cuidar de si com nossos serviços exclusivos</div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-cut"></i></div>
+                    <h3>Hair stylist</h3>
+                    <p>Cortes modernos, mechas rosê, balayage e tratamentos capilares com produtos veganos.</p>
+                    <span class="price">a partir R$ 129</span><br>
+                    <a href="#" class="btn-outline">Agendar</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-fingerprint"></i></div>
+                    <h3>Manicure & Pedicure</h3>
+                    <p>Esmaltação em gel, alongamento, designs exclusivos e SPA para as mãos e pés.</p>
+                    <span class="price">a partir R$ 85</span><br>
+                    <a href="#" class="btn-outline">Agendar</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-smile"></i></div>
+                    <h3>Maquiagem artística</h3>
+                    <p>Make para eventos, noivas, ou make lovers. Pigmentação suave e glam.</p>
+                    <span class="price">a partir R$ 159</span><br>
+                    <a href="#" class="btn-outline">Agendar</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-leaf"></i></div>
+                    <h3>Day Spa rosa</h3>
+                    <p>Massagem relaxante, hidratação profunda e ritual aromaterápico exclusivo.</p>
+                    <span class="price">a partir R$ 199</span><br>
+                    <a href="#" class="btn-outline">Agendar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre / Espaço -->
+    <section id="sobre">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=500&h=450&fit=crop" alt="Interior do salão rosa com sofá e toques florais">
+                </div>
+                <div class="about-text">
+                    <h3>✨ Um salão pensado para você</h3>
+                    <p>No Salão Rosa, cada detalhe foi criado para acolher. Tons suaves, aromas delicados e uma equipe de profissionais apaixonados por realçar sua beleza única.</p>
+                    <p>Utilizamos produtos cruelty-free e técnicas sustentáveis, porque beleza também é responsabilidade.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> Ambiente climatizado e exclusivo</li>
+                        <li><i class="fas fa-check-circle"></i> Profissionais certificados</li>
+                        <li><i class="fas fa-check-circle"></i> Política de fidelidade Rosa+</li>
+                    </ul>
+                    <a href="#" class="btn-primary"><i class="fas fa-heart"></i> Conheça nosso espaço</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeria -->
+    <section id="galeria" style="background-color: #fff7f9;">
+        <div class="container">
+            <h2 class="section-title">Nosso cantinho encantado</h2>
+            <div class="section-sub">momentos reais que aquecem o coração</div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=400&h=300&fit=crop" alt="cabelo com mechas rosadas">
+                    <div class="gallery-caption">Transformações rosadas</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=400&h=300&fit=crop" alt="unhas decoradas tom rosa">
+                    <div class="gallery-caption">Arte nas unhas ✨</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400&h=300&fit=crop" alt="ambiente acolhedor do salão">
+                    <div class="gallery-caption">Ambiente aconchegante</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section id="depoimentos">
+        <div class="container">
+            <h2 class="section-title">O que falam por aí</h2>
+            <div class="section-sub">Clientes apaixonadas pelo toque rosa</div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p>"Ambiente dos sonhos! Saí de lá com um corte incrível e me sentindo especial. Atendimento impecável e a decoração rosa é um charme."</p>
+                    <div class="client">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="cliente">
+                        <div class="client-info"><h4>Mariana L.</h4><span>cliente há 2 anos</span></div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p>"Melhor salão que já fui! A manicure é perfeita, adorei a técnica de alongamento. Além disso, o cuidado com cada detalhe é surreal."</p>
+                    <div class="client">
+                        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="cliente">
+                        <div class="client-info"><h4>Camila S.</h4><span>maquiagem e unhas</span></div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+                    <p>"Fiz o Day Spa Rosa com minha amiga e foi uma experiência maravilhosa. Atendimento acolhedor, produtos suaves. Recomendo demais!"</p>
+                    <div class="client">
+                        <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="cliente">
+                        <div class="client-info"><h4>Fernanda A.</h4><span>spa day</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato e localização -->
+    <section id="contato" style="background: linear-gradient(to right, #fff2f5, #ffeef2);">
+        <div class="container">
+            <div class="about-grid" style="background: transparent; padding: 0; gap: 40px;">
+                <div class="about-text">
+                    <h3><i class="fas fa-map-marker-alt" style="color:#e27b8f"></i> Onde nos encontrar</h3>
+                    <p>Rua das Camélias, 345 - Jardim Rosado, São Paulo - SP<br>Segunda a Sábado: 9h às 20h | Domingos: 10h às 16h</p>
+                    <p><i class="fas fa-phone-alt"></i> (11) 98888-7766<br><i class="fab fa-whatsapp"></i> (11) 97777-1234</p>
+                    <div class="social-icons" style="justify-content: flex-start; margin: 20px 0;">
+                        <a href="#" style="background:#eac2cc; color:#782e3f;"><i class="fab fa-instagram"></i></a>
+                        <a href="#" style="background:#eac2cc; color:#782e3f;"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" style="background:#eac2cc; color:#782e3f;"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                    <a href="#" class="btn-primary"><i class="fas fa-envelope"></i> Fale conosco</a>
+                </div>
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1583195764036-6dc248ac07b9?w=500&h=350&fit=crop" alt="fachada salão rosa">
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Salão Rosa</h4>
+                <p>Beleza com essência, amor em cada detalhe. Transformamos seu visual com arte e carinho.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#sobre">Sobre nós</a></li>
+                    <li><a href="#galeria">Galeria</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contato</h4>
+                <ul>
+                    <li><i class="fas fa-phone-alt"></i> (11) 98888-7766</li>
+                    <li><i class="fab fa-whatsapp"></i> (11) 97777-1234</li>
+                    <li><i class="fas fa-envelope"></i> contato@salaorosa.com</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Horário especial</h4>
+                <p>Seg - Sex: 9h - 20h<br>Sáb: 9h - 18h<br>Dom: 10h - 16h (mediante agendamento)</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Salão Rosa — Todos os direitos reservados. Beleza em tons de rosa.</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
